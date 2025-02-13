@@ -1,6 +1,7 @@
 # Tele-Operator Video Recording System
 
-A web application that displays laptop camera feed alongside point cloud visualization, built with React and Flask.
+A web application that displays a laptop camera feed alongside point cloud visualization, built with React and Flask.
+**Video Demo:** [Watch here](https://www.loom.com/share/4ee5169bbd244437b9e09a22741627ac?sid=28e35083-e40a-4a9c-af9f-d89ef450d7af)
 
 ## 🚀 Features
 
@@ -9,7 +10,7 @@ A web application that displays laptop camera feed alongside point cloud visuali
 - Live FPS (Frames Per Second) monitoring
 - Recording duration tracking
 - Simple file upload system
-- Point Cloud Model visualisation
+- Point Cloud Model visualization
 - Camera controls for the model.
 
 
