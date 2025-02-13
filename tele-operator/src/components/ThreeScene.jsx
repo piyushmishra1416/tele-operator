@@ -82,7 +82,6 @@ export default function ThreeScene() {
     };
     mountRef.current.addEventListener("click", handleClick);
 
-    // Animation Loop
     const animate = () => {
       requestAnimationFrame(animate);
       controls.update();
@@ -90,7 +89,6 @@ export default function ThreeScene() {
     };
     animate();
 
-    // Cleanup Function
     return () => {
       window.removeEventListener("resize", handleResize);
       mountRef.current.removeEventListener("click", handleClick);
@@ -106,18 +104,27 @@ export default function ThreeScene() {
   }, []);
 
   return (
-    <div className="relative h-full">
-      <div ref={mountRef} className="w-full h-full" />
-      <div className="absolute top-4 left-4 bg-black/50 p-3 rounded text-white max-w-[200px] overflow-auto">
-        <h3 className="text-sm font-semibold mb-2">Selected Points:</h3>
-        <ul className="text-xs">
-          {selectedPoints.map((point, index) => (
-            <li key={index} className="mb-1">
-              Point {index + 1}: ({point.x.toFixed(2)}, {point.y.toFixed(2)},{" "}
-              {point.z.toFixed(2)})
-            </li>
-          ))}
-        </ul>
+    <div className="relative h-full group">
+      <div ref={mountRef} className="w-full h-full rounded-lg overflow-hidden" />
+
+      <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-sm p-4 rounded-lg text-white max-w-[240px] border border-purple-500/20 transform transition-all duration-300 hover:scale-105">
+        <h3 className="text-sm font-semibold mb-3 text-purple-300 flex items-center">
+          <span className="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
+          Selected Points
+        </h3>
+        <div className="max-h-[200px] overflow-auto custom-scrollbar">
+          <ul className="space-y-2">
+            {selectedPoints.map((point, index) => (
+              <li key={index} className="text-xs bg-white/5 p-2 rounded">
+                <span className="text-pink-400">Point {index + 1}:</span>
+                <br />
+                <span className="font-mono">
+                  ({point.x.toFixed(2)}, {point.y.toFixed(2)}, {point.z.toFixed(2)})
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
