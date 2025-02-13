@@ -59,11 +59,9 @@ A web application that displays laptop camera feed alongside point cloud visuali
 
 ## 📁 Project Structure
 
-## Technical Stack
+## Architecture/ Flow:
+<img width="746" alt="image" src="https://github.com/user-attachments/assets/5d33fc82-c057-428f-8f71-e5053b8168df" />
 
-- Frontend: React, TypeScript, Three.js
-- Backend: Flask
-- Additional Libraries: OrbitControls, GLTFLoader
 
 ## Technical Decisions:
 
